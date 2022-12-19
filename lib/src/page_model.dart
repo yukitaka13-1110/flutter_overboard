@@ -16,6 +16,12 @@ class PageModel {
   /// Custom widget to pass as image in page
   Widget? child;
 
+  /// Image width
+  double width;
+
+  /// Image height
+  double height;
+
   /// To enable/disable child animation
   bool doAnimateChild = false;
 
@@ -29,20 +35,26 @@ class PageModel {
   Color? bodyColor;
 
   /// Create page model with image in show in on-boarding widget
-  PageModel(
-      {this.color,
-      this.titleColor,
-      this.bodyColor,
-      required this.imageAssetPath,
-      required this.title,
-      required this.body,
-      this.doAnimateImage = false});
+  PageModel({
+    this.color,
+    this.titleColor,
+    this.bodyColor,
+    this.width = 300,
+    this.height = 300,
+    required this.imageAssetPath,
+    required this.title,
+    required this.body,
+    this.doAnimateImage = false,
+  });
 
   /// Create page model with custom child in show in on-boarding widget
-  PageModel.withChild(
-      {required this.child,
-      required this.color,
-      this.titleColor,
-      this.bodyColor,
-      this.doAnimateChild = false});
+  PageModel.withChild({
+    required this.child,
+    required this.color,
+    this.width = 300,
+    this.height = 300,
+    this.titleColor,
+    this.bodyColor,
+    this.doAnimateChild = false,
+  });
 }

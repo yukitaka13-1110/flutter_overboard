@@ -272,11 +272,11 @@ class _OverBoardState extends State<OverBoard> with TickerProviderStateMixin {
                         child: new Padding(
                           padding: new EdgeInsets.only(bottom: 25.0),
                           child: new Image.asset(page.imageAssetPath!,
-                              width: 300.0, height: 300.0),
+                              width: page.width, height: page.height),
                         ),
                       )
                     : Image.asset(page.imageAssetPath!,
-                        width: 300.0, height: 300.0),
+                        width: page.width, height: page.height),
                 Padding(
                   padding: new EdgeInsets.only(
                       top: 10.0, bottom: 10.0, left: 30.0, right: 30.0),
