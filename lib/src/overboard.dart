@@ -263,45 +263,47 @@ class _OverBoardState extends State<OverBoard> with TickerProviderStateMixin {
                     )
                   : page.child,
             )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                page.doAnimateImage
-                    ? AnimatedBoard(
-                        animator: _animator,
-                        child: new Padding(
-                          padding: new EdgeInsets.only(bottom: 25.0),
-                          child: new Image.asset(page.imageAssetPath!,
-                              width: page.width, height: page.height),
-                        ),
-                      )
-                    : Image.asset(page.imageAssetPath!,
-                        width: page.width, height: page.height),
-                Padding(
-                  padding: new EdgeInsets.only(
-                      top: 10.0, bottom: 10.0, left: 30.0, right: 30.0),
-                  child: new Text(
-                    page.title!,
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      color: page.titleColor ?? Colors.white,
-                      fontSize: 34.0,
+          : SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  page.doAnimateImage
+                      ? AnimatedBoard(
+                          animator: _animator,
+                          child: new Padding(
+                            padding: new EdgeInsets.only(bottom: 25.0),
+                            child: new Image.asset(page.imageAssetPath!,
+                                width: page.width, height: page.height),
+                          ),
+                        )
+                      : Image.asset(page.imageAssetPath!,
+                          width: page.width, height: page.height),
+                  Padding(
+                    padding: new EdgeInsets.only(
+                        top: 10.0, bottom: 10.0, left: 30.0, right: 30.0),
+                    child: new Text(
+                      page.title!,
+                      textAlign: TextAlign.center,
+                      style: new TextStyle(
+                        color: page.titleColor ?? Colors.white,
+                        fontSize: 34.0,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: new EdgeInsets.only(
-                      bottom: 75.0, left: 30.0, right: 30.0),
-                  child: new Text(
-                    page.body!,
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      color: page.bodyColor ?? Colors.white,
-                      fontSize: 18.0,
+                  Padding(
+                    padding: new EdgeInsets.only(
+                        bottom: 75.0, left: 30.0, right: 30.0),
+                    child: new Text(
+                      page.body!,
+                      textAlign: TextAlign.center,
+                      style: new TextStyle(
+                        color: page.bodyColor ?? Colors.white,
+                        fontSize: 18.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
     );
   }
